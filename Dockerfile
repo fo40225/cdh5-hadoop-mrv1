@@ -23,7 +23,9 @@ RUN sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
 RUN sudo apt-get update -y
 
 # Install Java v7
-RUN sudo apt-get install oracle-java8-installer jsvc git maven -y
+RUN sudo apt-get install jsvc git maven binutils -y
+RUN wget https://debian.opennms.org/dists/opennms-25/main/binary-all/oracle-java8-installer_8u131-1~webupd8~2_all.deb
+RUN sudo dpkg -i oracle-java8-installer_8u131-1~webupd8~2_all.deb
 
 # Install latest CDH5 MapReduce 1
 RUN sudo apt-get install hadoop-0.20-conf-pseudo -y
